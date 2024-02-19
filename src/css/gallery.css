@@ -1,0 +1,13 @@
+.container {
+    max-width: 1128px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
