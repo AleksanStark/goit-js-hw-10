@@ -1,22 +1,22 @@
 import '../assets/modulepreload-polyfill-3cfb730f.js';
-import { i } from '../assets/vendor-77e16229.js';
-const t = document.querySelector('.form');
-t.addEventListener('submit', function (s) {
-  s.preventDefault();
-  const e = Number(t.delay.value);
-  return new Promise((o, r) => {
+import { i as s } from '../assets/vendor-77e16229.js';
+const i = document.querySelector('.form');
+i.addEventListener('submit', function (o) {
+  o.preventDefault();
+  const t = Number(i.delay.value);
+  return new Promise((e, r) => {
     setTimeout(() => {
-      t.state.value === 'fulfilled' ? o('fulfilled') : r('reject');
-    }, e);
+      i.state.value === 'fulfilled' ? e(t) : r(t);
+    }, t);
   })
-    .then(() =>
-      i.success({
+    .then(e =>
+      s.success({
         message: `✅ Fulfilled promise in ${e}ms`,
         position: 'topRight',
       })
     )
-    .catch(() => {
-      i.error({
+    .catch(e => {
+      s.error({
         message: `❌ Rejected promise in ${e}ms`,
         position: 'topRight',
       });

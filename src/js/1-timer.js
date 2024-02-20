@@ -25,8 +25,9 @@ const options = {
         message: 'Please choose a date in the future',
         position: 'topRight',
       });
-      startButton.disabled = false;
+      startButton.disabled = true;
     } else {
+      startButton.disabled = false;
       userSelectedDate = selectedDates[0];
     }
   },
@@ -69,6 +70,7 @@ const startTimer = targetTime => {
     const timeDiff = targetTime - currentTime;
 
     if (timeDiff <= 0) {
+      clearInterval(countdownInterval);
       iziToast.success({
         title: 'CountDown Complete',
         message: 'The countdown has reached zero',
