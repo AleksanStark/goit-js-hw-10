@@ -9,19 +9,19 @@ form.addEventListener('submit', function (event) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (form.state.value === 'fulfilled') {
-        resolve('fulfilled');
+        resolve(delay);
       } else {
-        reject('reject');
+        reject(delay);
       }
     }, delay);
   })
-    .then(() =>
+    .then(delay =>
       iziToast.success({
         message: `✅ Fulfilled promise in ${delay}ms`,
         position: 'topRight',
       })
     )
-    .catch(() => {
+    .catch(delay => {
       iziToast.error({
         message: `❌ Rejected promise in ${delay}ms`,
         position: 'topRight',

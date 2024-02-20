@@ -69,6 +69,7 @@ const startTimer = targetTime => {
     const timeDiff = targetTime - currentTime;
 
     if (timeDiff <= 0) {
+      clearInterval(countdownInterval);
       iziToast.success({
         title: 'CountDown Complete',
         message: 'The countdown has reached zero',
