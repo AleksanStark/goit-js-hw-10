@@ -13,6 +13,7 @@ const hoursElement = document.querySelector('[data-hours]');
 const minutesElement = document.querySelector('[data-minutes]');
 const secondsElement = document.querySelector('[data-seconds]');
 
+startButton.disabled = true;
 const options = {
   enableTime: true,
   time_24hr: true,
